@@ -1,0 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+@font-face {
+  font-family: "Montserrat Arabic";
+  /* Name of the custom font */
+  src: url("./assets/fonts/Montserrat-Arabic-Regular-2.ttf");
+  /* Fallback format */
+  font-weight: normal;
+  font-style: normal;
+}
+
+*,
+body,
+html {
+  font-family: "Montserrat Arabic", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
