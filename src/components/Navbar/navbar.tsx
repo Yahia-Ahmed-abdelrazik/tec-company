@@ -1,10 +1,12 @@
+import { useState } from "react";
 import { HamburgerButton } from "./HamburgerButton ";
 import { Navlinks } from "./Navlinks";
 
 export const Navbar = () => {
+  const [activeToggle, setActiveToggle] = useState(false);
   return (
-    <nav className=" bg-white   fixed w-full z-20 top-0 start-0 border-b border-gray-200 ">
-      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4 px-12">
+    <nav className=" bg-white fixed w-full z-20 top-0 start-0 border-b border-gray-200 ">
+      <div className="relative max-w-screen-xl flex flex-wrap items-center justify-between mx-auto py-4 px-6 md:px-12">
         {/* logo */}
         <a
           href="https://flowbite.com/"
@@ -21,10 +23,13 @@ export const Navbar = () => {
         </a>
         {/* toggle */}
 
-        <HamburgerButton />
+        <HamburgerButton
+          activeToggle={activeToggle}
+          setActiveToggle={setActiveToggle}
+        />
 
         {/* navlinks */}
-        <Navlinks />
+        <Navlinks activeToggle={activeToggle} />
       </div>
     </nav>
   );

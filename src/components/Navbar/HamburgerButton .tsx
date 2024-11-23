@@ -1,8 +1,12 @@
-import { useState } from "react";
 import { MotionConfig, motion } from "framer-motion";
 
-export const HamburgerButton = () => {
-  const [active, setActive] = useState(false);
+export const HamburgerButton = ({
+  activeToggle,
+  setActiveToggle,
+}: {
+  activeToggle: boolean;
+  setActiveToggle: (value: boolean) => void;
+}) => {
   return (
     <div className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-zinc-900 rounded-lg md:hidden hover:bg-zinc-200 focus:outline-none focus:ring-2 focus:ring-zinc-900">
       <MotionConfig
@@ -13,8 +17,8 @@ export const HamburgerButton = () => {
       >
         <motion.button
           initial={false}
-          animate={active ? "open" : "closed"}
-          onClick={() => setActive((pv) => !pv)}
+          animate={activeToggle ? "open" : "closed"}
+          onClick={() => setActiveToggle((pv: boolean) => !pv)}
           className="relative h-20 w-20 rounded-full bg-white/0 transition-colors hover:bg-white/20"
         >
           <motion.span

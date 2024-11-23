@@ -2,6 +2,8 @@ import { motion } from "framer-motion";
 type Position = {
   left: number;
   width: number;
+  height: number;
+  top: number;
   opacity: number;
 };
 export const Cursor = ({ position }: { position: Position }) => {
