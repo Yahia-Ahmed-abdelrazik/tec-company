@@ -53,11 +53,17 @@ module.exports = {
       },
       animation: {
         "slide-from-right": "slide-from-right 1s ease-in-out",
+        moveDown: "moveDown 3s linear infinite",
       },
       keyframes: {
         "slide-from-right": {
-          "0%": { transform: "translateX(100%)" } /* Start from right */,
-          "100%": { transform: "translateX(0)" } /* End at original position */,
+          "0%": { transform: "translateX(100%)" },
+          "100%": { transform: "translateX(0)" },
+        },
+        moveDown: {
+          "0%": { top: "0", opacity: "0" },
+          "50%": { top: "50%", opacity: "1" },
+          "100%": { top: "100%", opacity: "0" },
         },
       },
     },

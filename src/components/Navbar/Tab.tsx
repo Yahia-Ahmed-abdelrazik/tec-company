@@ -13,7 +13,6 @@ export const Tab = ({
   setPosition,
 }: {
   children: string;
-  activeToggle: boolean;
   setPosition: Dispatch<SetStateAction<Position>>;
 }) => {
   const ref = useRef<null | HTMLLIElement>(null);
