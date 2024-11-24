@@ -130,4 +130,7 @@
   .line-before {
     @apply absolute w-[10px] h-[10px] bg-zinc-400 rounded-full top-0 right-1/2 translate-x-1/2 animate-moveDown;
   }
+  .btn {
+    @apply px-8 py-2 border rounded-3xl border-zinc-900 font-bold flex items-center gap-2 relative;
+  }
 }
