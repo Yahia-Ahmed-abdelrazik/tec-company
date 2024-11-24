@@ -4,6 +4,7 @@ import facebook from "@/assets/imgs/facebook.svg";
 import linkedin from "@/assets/imgs/linkedin.svg";
 import portofolio from "@/assets/imgs/portofolio.svg";
 import products from "@/assets/imgs/products.svg";
+import FlipPrand from "@/pages/Home/FlipPrand";
 
 const Hero = () => {
   return (
@@ -59,17 +60,19 @@ const Hero = () => {
         </div>
         {/* content */}
         <div className="  flex flex-col justify-center items-center text-center mx-auto gap-4 max-w-[calc(100%-24px)] w-full md:max-w-[800px]">
-          <h1 className=" flex-col font-serif font-bold text-5xl md:text-6xl text-center items-center text-zinc-900 text-balance ">
+          <FlipPrand>
             اسم الشركه
             <span className="font-serif inline-flex text-blue-700  px-2 pt-4">
               و شعار
             </span>
             الشركه
-          </h1>
-          <h5 className="text-balance text-gray-500 font-serif leading-tight max-w-lg">
-            نص نص نص نص نص نص نص نص نص نص نص نص نص نص نص نص نص نص نص نص نص نص نص
-            نص نص نص نص نص نص نص نص نص نص نص نص نص نص نص نص نص نص نص نص نص نص نص
-            نص
+          </FlipPrand>
+          <h5 className="text-balance lg:text-lg text-gray-500 font-serif leading-tight max-w-lg md:max-w-2xl">
+            نحن شركة الابتكار الرقمي، نتميز في تصميم المواقع الإلكترونية، تطوير
+            تطبيقات الجوال، بناء المتاجر الإلكترونية، وتقديم الحلول التدريبية.
+            نحن نساعد في تحويل أفكارك إلى حلول واقعية من خلال لمسات إبداعية
+            يقدمها فريقنا المحترف والمتميز. نؤمن بأن كل فكرة تستحق أن تصبح
+            حقيقة، ونحن هنا لتحقيق ذلك بأعلى مستويات الجودة والابتكار.
           </h5>
           {/* social */}
           <div className="flex items-center justify-center gap-2 p-2 ">
@@ -118,8 +121,6 @@ const Hero = () => {
               />
             </a>
           </div>
-          {/* btns */}
-          <div></div>
         </div>
         {/* btns */}
         <div className="flex justify-center items-center gap-4 flex-wrap mt-4">
@@ -131,7 +132,7 @@ const Hero = () => {
               className="h-4 object-contain transition"
             />
           </a>
-          <a href="" className="btn ">
+          <a href="" className="btn order-2 md:order-none ">
             <span>اطلب خدمه</span>
             <img src="" alt="" />
           </a>

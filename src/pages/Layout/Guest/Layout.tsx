@@ -11,10 +11,11 @@ const Layout: FunctionComponent = () => {
       {/* content */}
       <div className="content">
         {/*  body overlay  */}
-        <div
-          className="fixed inset-0 z-10 pointer-events-none opacity-100 bg-top-right bg-repeat"
-          style={{ backgroundImage: `url(${body_bg})` }}
-        >
+        <div className="fixed inset-0 z-10 p opacity-100 bg-top-right bg-repeat">
+          <div
+            className="inset-0 ointer-events-none"
+            style={{ backgroundImage: `url(${body_bg})` }}
+          ></div>
           <Home />
         </div>
       </div>
