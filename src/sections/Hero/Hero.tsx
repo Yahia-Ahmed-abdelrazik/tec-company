@@ -1,10 +1,18 @@
-import call from "@/assets/imgs/call.svg";
-import whatsapp from "@/assets/imgs/whatsapp.svg";
-import facebook from "@/assets/imgs/facebook.svg";
-import linkedin from "@/assets/imgs/linkedin.svg";
+import Call from "@/assets/imgs/call.svg";
+import WhatsApp from "@/assets/imgs/whatsapp.svg";
+import Facebook from "@/assets/imgs/facebook.svg";
+import Linkedin from "@/assets/imgs/linkedin.svg";
 import portofolio from "@/assets/imgs/portofolio.svg";
 import products from "@/assets/imgs/products.svg";
 import FlipPrand from "@/pages/Home/FlipPrand";
+
+//
+const socialLinks = [
+  { icon: Facebook, href: "#", label: "Facebook" },
+  { icon: Linkedin, href: "#", label: "LinkedIn" },
+  { icon: WhatsApp, href: "#", label: "WhatsApp" },
+  { icon: Call, href: "#", label: "Call" },
+];
 
 const Hero = () => {
   return (
@@ -74,53 +82,23 @@ const Hero = () => {
             يقدمها فريقنا المحترف والمتميز. نؤمن بأن كل فكرة تستحق أن تصبح
             حقيقة، ونحن هنا لتحقيق ذلك بأعلى مستويات الجودة والابتكار.
           </h5>
-          {/* social */}
-          <div className="flex items-center justify-center gap-2 p-2 ">
+        </div>
+        {/* social */}
+        <div className="flex items-center justify-center gap-2 mt-4 p-2 ">
+          {socialLinks.map((link, index) => (
             <a
-              href="#"
+              key={index}
+              href={link.href}
               target="_blank"
-              className="flex items-center justify-center w-10 h-10 rounded-full bg-transparent border border-solid border-zinc-900 transition"
+              className="group relative flex h-12 w-12 items-center justify-center overflow-hidden rounded-full border border-zinc-300 bg-white transition-all duration-300 ease-in-out hover:-translate-y-1 hover:border-zinc-400 hover:shadow-lg"
             >
               <img
-                src={facebook}
-                alt="whatsapp"
-                className="h-4 object-contain transition"
+                src={link.icon}
+                className="z-10 h-5 w-5 text-zinc-600 transition-all duration-300 ease-in-out group-hover:scale-110 group-hover:text-zinc-900"
               />
+              <div className="absolute inset-0 scale-0 rounded-full bg-blue-400 transition-all duration-300 ease-in-out group-hover:scale-100"></div>
             </a>
-            <a
-              href="#"
-              target="_blank"
-              className="flex items-center justify-center w-10 h-10 rounded-full bg-transparent border border-solid border-zinc-900 transition"
-            >
-              <img
-                src={linkedin}
-                alt="whatsapp"
-                className="h-4 object-contain transition"
-              />
-            </a>
-            <a
-              href="#"
-              target="_blank"
-              className="flex items-center justify-center w-10 h-10 rounded-full bg-transparent border border-solid border-zinc-900 transition"
-            >
-              <img
-                src={whatsapp}
-                alt="whatsapp"
-                className="h-4 object-contain transition"
-              />
-            </a>
-            <a
-              href="#"
-              target="_blank"
-              className="flex items-center justify-center w-10 h-10 rounded-full bg-transparent border border-solid border-zinc-900 transition"
-            >
-              <img
-                src={call}
-                alt="whatsapp"
-                className="h-4 object-contain transition"
-              />
-            </a>
-          </div>
+          ))}
         </div>
         {/* btns */}
         <div className="flex justify-center items-center gap-4 flex-wrap mt-4">
