@@ -93,8 +93,11 @@ export default function AboutUs() {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="mt-12"
           >
-            <motion.div className="text-[120px] font-bold text-gray-100 leading-none">
+            <motion.div className="flex justify-end items-center gap-2 text-[120px] font-bold text-gray-300 leading-none ">
               <motion.span>{rounded}</motion.span>
+              <motion.h6 className="text-lg text-zinc-900  [writing-mode:vertical-rl]">
+                التأسيس
+              </motion.h6>
             </motion.div>
           </motion.div>
         </div>

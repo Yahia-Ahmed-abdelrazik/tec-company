@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { Tab } from "./Tab";
 import { Cursor } from "./Cursor";
+
+import { motion, AnimatePresence } from "framer-motion";
 //
 type Position = {
   left: number;
@@ -43,25 +45,31 @@ export const Navlinks = ({ activeToggle }: { activeToggle: boolean }) => {
         </ul>
       </div>
       {/* mobile */}
-      {activeToggle && (
-        <ul
-          onMouseLeave={() => {
-            setPosition((pv) => ({
-              ...pv,
-              opacity: 0,
-            }));
-          }}
-          className=" absolute right-0 top-[100%] flex flex-col  w-full gap-y-4  py-5 px-6 -ml-6 bg-white animate-slide-from-right transition-all duration-500 "
-        >
-          <Tab setPosition={setPosition}>الرئيسية</Tab>
-          <Tab setPosition={setPosition}>من نحن</Tab>
-          <Tab setPosition={setPosition}>خدماتنا</Tab>
-          <Tab setPosition={setPosition}>المدونة</Tab>
-          <Tab setPosition={setPosition}>تواصل معنا</Tab>
+      <AnimatePresence>
+        {activeToggle && (
+          <motion.ul
+            initial={{ opacity: 0, x: "100%" }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: "100%" }}
+            transition={{ duration: 0.5 }}
+            onMouseLeave={() => {
+              setPosition((pv) => ({
+                ...pv,
+                opacity: 0,
+              }));
+            }}
+            className=" absolute right-0 top-[100%] flex flex-col  w-full gap-y-4  py-5 px-6 -ml-6 bg-white  "
+          >
+            <Tab setPosition={setPosition}>الرئيسية</Tab>
+            <Tab setPosition={setPosition}>من نحن</Tab>
+            <Tab setPosition={setPosition}>خدماتنا</Tab>
+            <Tab setPosition={setPosition}>المدونة</Tab>
+            <Tab setPosition={setPosition}>تواصل معنا</Tab>
 
-          <Cursor position={position} />
-        </ul>
-      )}
+            <Cursor position={position} />
+          </motion.ul>
+        )}
+      </AnimatePresence>
     </>
   );
 };
