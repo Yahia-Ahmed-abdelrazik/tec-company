@@ -119,10 +119,6 @@
 }
 
 @layer utilities {
-  /* .nav-link {
-    @apply block py-2 px-3 text-white bg-zinc-900 rounded md:bg-transparent md:text-zinc-900 md:p-0
-  } */
-
   .line {
     @apply w-px h-full  bg-gradient-to-b from-zinc-400  to-transparent relative;
   }
@@ -130,7 +126,10 @@
   .line-before {
     @apply absolute w-[10px] h-[10px] bg-zinc-400 rounded-full top-0 right-1/2 translate-x-1/2 animate-moveDown;
   }
-  .btn {
-    @apply px-8 py-2 border rounded-3xl border-zinc-900 font-bold flex items-center gap-2 relative;
+  .btn-custom {
+    @apply px-8 py-2 border rounded-3xl border-zinc-900 font-bold flex items-center gap-2 relative bg-transparent  hover:bg-blue-400;
+  }
+  .glow {
+    @apply z-[-1] absolute inset-0 rounded-lg bg-blue-400 opacity-0 blur-md group-hover:opacity-80 transition-all duration-500;
   }
 }

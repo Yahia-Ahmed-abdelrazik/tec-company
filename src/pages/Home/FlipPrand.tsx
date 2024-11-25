@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-const FlipPrand = ({ children }: { children: string | Element }) => {
+const FlipPrand = ({ children }: { children: string | JSX.Element }) => {
   return (
     <motion.h1
       initial="initial"

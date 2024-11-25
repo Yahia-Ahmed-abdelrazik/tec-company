@@ -21,6 +21,7 @@ const Hero = () => {
         {/* background shadow */}
         <div className="absolute top-0 right-0 w-0 h-0 z-[-2] opacity-60 shadow-[0_0_25vw_25vw_rgba(14,14,15,0.3)]"></div>
         <div className="absolute bottom-0 left-0 w-0 h-0 z-[-2] opacity-60 shadow-[0_0_25vw_25vw_rgba(14,14,15,0.3)]"></div>
+        <div className="absolute top-1/2 right-1/2 -translate-x-1/2 -translate-y-1/2 w-0 h-0 z-[-2] opacity-40 shadow-[0_0_20vw_20vw_rgba(49,130,249,0.3)]"></div>
         {/* lins */}
         <div className="flex justify-around pointer-events-none -z-[1] absolute top-0 right-0 w-full h-full">
           <span className="line ">
@@ -75,53 +76,73 @@ const Hero = () => {
             </span>
             الشركه
           </FlipPrand>
-          <h5 className="text-balance lg:text-lg text-gray-500 font-serif leading-tight max-w-lg md:max-w-2xl">
+          <h5 className="text-balance lg:text-lg text-gray-700 font-serif leading-tight max-w-lg md:max-w-2xl">
             نحن شركة الابتكار الرقمي، نتميز في تصميم المواقع الإلكترونية، تطوير
             تطبيقات الجوال، بناء المتاجر الإلكترونية، وتقديم الحلول التدريبية.
             نحن نساعد في تحويل أفكارك إلى حلول واقعية من خلال لمسات إبداعية
             يقدمها فريقنا المحترف والمتميز. نؤمن بأن كل فكرة تستحق أن تصبح
             حقيقة، ونحن هنا لتحقيق ذلك بأعلى مستويات الجودة والابتكار.
           </h5>
-        </div>
-        {/* social */}
-        <div className="flex items-center justify-center gap-2 mt-4 p-2 ">
-          {socialLinks.map((link, index) => (
+
+          {/* social */}
+          <div className="flex items-center justify-center gap-2 mt-4 p-2 ">
+            {socialLinks.map((link, index) => (
+              <a
+                key={index}
+                href={link.href}
+                target="_blank"
+                className="group relative flex h-12 w-12 items-center justify-center overflow-hidden rounded-full border border-zinc-700 bg-transparent transition-all duration-300 ease-in-out hover:-translate-y-1 hover:border-zinc-400 hover:shadow-lg hover:bg-blue-400"
+              >
+                <span className="glow"></span>
+                <img
+                  src={link.icon}
+                  className="z-10 h-5 w-5 text-zinc-600 transition-all duration-300 ease-in-out group-hover:brightness-0 group-hover:invert group-hover:scale-110"
+                />
+                <div className="absolute inset-0 scale-0 rounded-full bg-blue-400 transition-all duration-300 ease-in-out group-hover:scale-100"></div>
+              </a>
+            ))}
+          </div>
+          {/* btns */}
+          <div className=" flex justify-center items-center gap-4 flex-wrap mt-4 ">
             <a
-              key={index}
-              href={link.href}
-              target="_blank"
-              className="group relative flex h-12 w-12 items-center justify-center overflow-hidden rounded-full border border-zinc-300 bg-white transition-all duration-300 ease-in-out hover:-translate-y-1 hover:border-zinc-400 hover:shadow-lg"
+              href=""
+              className="btn-custom transition-all duration-300 ease-in-out group "
             >
+              <span className="group-hover:text-white transition-all duration-300 ease-in-out">
+                منتجاتنا
+              </span>
+              <span className="glow"></span>
+
               <img
-                src={link.icon}
-                className="z-10 h-5 w-5 text-zinc-600 transition-all duration-300 ease-in-out group-hover:scale-110 group-hover:text-zinc-900"
+                src={products}
+                alt=""
+                className="h-4 object-contain transition-all duration-300 ease-in-out group-hover:brightness-0 group-hover:invert group-hover:scale-110"
               />
-              <div className="absolute inset-0 scale-0 rounded-full bg-blue-400 transition-all duration-300 ease-in-out group-hover:scale-100"></div>
             </a>
-          ))}
-        </div>
-        {/* btns */}
-        <div className="flex justify-center items-center gap-4 flex-wrap mt-4">
-          <a href="" className="btn ">
-            <span>منتجاتنا</span>
-            <img
-              src={products}
-              alt=""
-              className="h-4 object-contain transition"
-            />
-          </a>
-          <a href="" className="btn order-2 md:order-none ">
-            <span>اطلب خدمه</span>
-            <img src="" alt="" />
-          </a>
-          <a href="" className="btn">
-            <span>اعمالن</span>
-            <img
-              src={portofolio}
-              alt=""
-              className="h-4 object-contain transition"
-            />
-          </a>
+            <a
+              href=""
+              className="btn-custom transition-all duration-300 ease-in-out group  order-2 md:order-none"
+            >
+              <span className="group-hover:text-white transition-all duration-300 ease-in-out">
+                اطلب خدمه
+              </span>
+              <span className="glow"></span>
+            </a>
+            <a
+              href=""
+              className="btn-custom transition-all duration-300 ease-in-out group "
+            >
+              <span className="group-hover:text-white transition-all duration-300 ease-in-out">
+                اعمالن
+              </span>
+              <span className="glow"></span>
+              <img
+                src={portofolio}
+                alt=""
+                className="h-4 object-contain transition-all duration-300 ease-in-out group-hover:brightness-0 group-hover:invert group-hover:scale-110"
+              />
+            </a>
+          </div>
         </div>
       </div>
     </>
