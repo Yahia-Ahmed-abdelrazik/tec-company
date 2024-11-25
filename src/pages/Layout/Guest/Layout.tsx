@@ -4,7 +4,7 @@ import Home from "@/pages/Home/Home";
 
 import "@/index.css";
 import body_bg from "@/assets/imgs/body-bg.png";
-import AboutUs from "@/sections/AboutUs/AboutUS";
+
 const Layout: FunctionComponent = () => {
   return (
     <>
@@ -20,7 +20,6 @@ const Layout: FunctionComponent = () => {
         </div>
         <Home />
         {/* <div className="h-[200px] bg-black"></div> */}
-        <AboutUs />
       </div>
     </>
   );

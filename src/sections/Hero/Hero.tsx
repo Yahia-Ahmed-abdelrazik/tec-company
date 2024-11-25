@@ -17,7 +17,7 @@ const socialLinks = [
 const Hero = () => {
   return (
     <>
-      <div className="relative min-h-[80dvh] pt-[150px] md:pt-[200px] pb-[100px]  ">
+      <div className="relative h-[100dvh] pt-[150px] md:pt-[200px] pb-[100px]  ">
         {/* background shadow */}
         <div className="absolute top-0 right-0 w-0 h-0 z-[-2] opacity-60 shadow-[0_0_25vw_25vw_rgba(14,14,15,0.3)]"></div>
         <div className="absolute bottom-0 left-0 w-0 h-0 z-[-2] opacity-60 shadow-[0_0_25vw_25vw_rgba(14,14,15,0.3)]"></div>
