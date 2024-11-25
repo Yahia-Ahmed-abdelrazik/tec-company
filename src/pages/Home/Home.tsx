@@ -3,8 +3,10 @@ import AboutUs from "@/sections/AboutUs/AboutUS";
 const Home = () => {
   return (
     <>
-      <Hero />
-      <AboutUs />
+      <div className="container">
+        <Hero />
+        <AboutUs />
+      </div>
     </>
   );
 };

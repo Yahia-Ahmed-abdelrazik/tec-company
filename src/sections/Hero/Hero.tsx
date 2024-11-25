@@ -24,7 +24,7 @@ const socialLinks: SocialLink[] = [
 const Hero: React.FC = () => {
   return (
     <motion.div
-      className="relative h-[100dvh] pt-[150px] md:pt-[200px] pb-[100px] overflow-hidden"
+      className="relative h-[100dvh] pt-[150px] md:pt-[200px] pb-[100px] overflow-hidden [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_40%,black_60%,black_70%,transparent)]"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}

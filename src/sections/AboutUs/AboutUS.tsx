@@ -3,28 +3,53 @@ import { useEffect, useRef } from "react";
 import test_img from "@/assets/imgs/test_img.webp";
 
 export default function AboutUs() {
-  const sectionRef = useRef(null);
-  const isInView = useInView(sectionRef, { once: true, amount: 0.3 });
-  const spring = useSpring(0, { duration: 2000 });
+  const imageRef = useRef(null);
+  const textRef = useRef(null);
+  const isImageInView = useInView(imageRef, { once: true, amount: 0.3 });
+  const isTextInView = useInView(textRef, { once: true, amount: 0.3 });
+  const spring = useSpring(0, { duration: 3000 });
   const rounded = useTransform(spring, (latest) => Math.round(latest));
 
   useEffect(() => {
-    if (isInView) {
+    if (isTextInView) {
       spring.set(2017);
     }
-  }, [isInView, spring]);
+  }, [isTextInView, spring]);
 
   return (
-    <div
-      ref={sectionRef}
-      className="min-h-screen bg-white py-16 px-4 sm:px-6 lg:px-8"
-    >
+    <div className="min-h-screen bg-white py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        {/* Image Section */}
+        <motion.div
+          ref={imageRef}
+          initial={{ opacity: 0, y: 50 }}
+          animate={isImageInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8 }}
+          className="relative h-[400px] lg:h-[600px] rounded-3xl overflow-hidden order-first lg:order-last"
+        >
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-blue-700">
+            <div
+              className="absolute inset-0  opacity-80 "
+              style={{
+                backgroundImage: `url(${test_img})`,
+                backgroundSize: "cover",
+              }}
+            />
+          </div>
+          <div className="absolute top-8 right-8">
+            <img src="" alt=" Logo" className="h-12 w-auto" />
+          </div>
+          <div className="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-blue-900/50 to-transparent" />
+        </motion.div>
+
         {/* Text Content - Right to Left for Arabic */}
-        <div className="text-right space-y-6 rtl">
+        <div
+          ref={textRef}
+          className="text-right space-y-6 rtl order-last lg:order-first"
+        >
           <motion.div
             initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            animate={isTextInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-3xl font-bold text-gray-600 mb-2">
@@ -43,7 +68,7 @@ export default function AboutUs() {
 
           <motion.button
             initial={{ opacity: 0, x: -20 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            animate={isTextInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.3 }}
             className="inline-flex items-center px-6 py-3 border border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white rounded-full transition-colors duration-300"
           >
@@ -64,7 +89,7 @@ export default function AboutUs() {
 
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
-            animate={isInView ? { opacity: 1, scale: 1 } : {}}
+            animate={isTextInView ? { opacity: 1, scale: 1 } : {}}
             transition={{ duration: 0.8, delay: 0.6 }}
             className="mt-12"
           >
@@ -73,28 +98,6 @@ export default function AboutUs() {
             </motion.div>
           </motion.div>
         </div>
-
-        {/* Image Section */}
-        <motion.div
-          initial={{ opacity: 0, x: 50 }}
-          animate={isInView ? { opacity: 1, x: 0 } : {}}
-          transition={{ duration: 0.8 }}
-          className="relative h-[600px] rounded-3xl overflow-hidden"
-        >
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-blue-700">
-            <div
-              className="absolute inset-0  opacity-80 "
-              style={{
-                backgroundImage: `url(${test_img})`,
-                backgroundSize: "cover",
-              }}
-            />
-          </div>
-          <div className="absolute top-8 right-8">
-            <img src="" alt=" Logo" className="h-12 w-auto" />
-          </div>
-          <div className="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-blue-900/50 to-transparent" />
-        </motion.div>
       </div>
     </div>
   );
