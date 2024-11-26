@@ -19,7 +19,6 @@ const Layout: FunctionComponent = () => {
           ></div>
         </div>
         <Home />
-        {/* <div className="h-[200px] bg-black"></div> */}
       </div>
     </>
   );

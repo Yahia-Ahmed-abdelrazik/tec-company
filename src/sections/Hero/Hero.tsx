@@ -24,7 +24,7 @@ const socialLinks: SocialLink[] = [
 const Hero: React.FC = () => {
   return (
     <motion.div
-      className="relative min-h-[80dvh] pt-[150px] md:pt-[200px] pb-[100px] overflow-hidden [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_40%,black_60%,black_70%,transparent)]"
+      className="relative min-h-[80dvh] pt-[150px] md:pt-[200px] pb-[100px] overflow-hidden [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_40%,black_60%,black_70%,black_80%,transparent)]"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
@@ -118,7 +118,7 @@ const Hero: React.FC = () => {
               <img
                 src={link.icon}
                 alt={link.label}
-                className="z-10 h-5 w-5 text-zinc-600 transition-all duration-300 ease-in-out group-hover:brightness-0 group-hover:invert group-hover:scale-110"
+                className="z-10 h-5 w-5  transition-all duration-300 ease-in-out group-hover:brightness-0 group-hover:invert group-hover:scale-110"
               />
               <div className="absolute inset-0 scale-0 rounded-full bg-blue-400 transition-all duration-300 ease-in-out group-hover:scale-100"></div>
             </motion.a>
@@ -144,7 +144,7 @@ const Hero: React.FC = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <span className="group-hover:text-white transition-all duration-300 ease-in-out">
+              <span className="group-hover:text-white text-zinc-900 transition-all duration-300 ease-in-out">
                 {button.text}
               </span>
               <span className="glow"></span>
