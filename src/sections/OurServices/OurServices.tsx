@@ -168,8 +168,8 @@ export default function OurServices() {
               {/* Default State */}
               {hoverIndex !== index && (
                 <div className="relative z-10">
-                  <div className="mb-4 text-blue-300">{service.icon}</div>
-                  <h4 className="text-xl font-bold mb-3">{service.title}</h4>
+                  <div className="mb-8 text-blue-300">{service.icon}</div>
+                  <h4 className="text-xl font-bold mb-8">{service.title}</h4>
                   <p className="text-zinc-300 text-sm">{service.description}</p>
                 </div>
               )}
